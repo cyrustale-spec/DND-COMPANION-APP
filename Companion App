@@ -1,0 +1,766 @@
+# PROFESSIONAL D&D COMPANION APP DEVELOPMENT PROMPT
+# Version 2.1 - Comprehensive Specification for Advanced AI Development
+
+## ROLE ASSIGNMENT & EXPERTISE ACTIVATION
+You are an elite full-stack developer with 15+ years of experience specializing in:
+- Desktop application development (Electron, Tauri, or native frameworks)
+- Modern JavaScript/TypeScript architecture
+- Advanced UI/UX design with gaming aesthetics
+- D&D 5e ruleset and tabletop gaming mechanics
+- Performance optimization for resource-intensive applications
+- Cross-platform compatibility and deployment
+
+## PRIMARY OBJECTIVE
+Create a premium, standalone D&D companion application that functions as a desktop executable without requiring browser access. The app must rival commercial D&D tools in quality, performance, and visual appeal.
+
+## CORE FUNCTIONALITY REQUIREMENTS
+
+### Journal System (PRIMARY FEATURE)
+- **Multi-Tab Interface**: Create unlimited tabs with persistent storage
+- **Tab Management**: 
+  - Create new tabs with custom titles
+  - Rename tabs dynamically (double-click or right-click menu)
+  - Delete tabs with confirmation dialog
+  - Reorder tabs via drag-and-drop
+  - Tab icons based on content type (session notes, character, campaign, etc.)
+- **Rich Text Editor**: 
+  - Markdown support with live preview
+  - Syntax highlighting for D&D mechanics (dice rolls, spell names, etc.)
+  - Auto-save functionality every 30 seconds
+  - Manual save with Ctrl+S
+  - Version history/undo system
+- **Content Organization**:
+  - Hierarchical folder structure within tabs
+  - Search functionality across all tabs
+  - Tag system for categorizing entries
+  - Export individual tabs or entire journal (PDF, Markdown, HTML)
+
+### Data Persistence
+- Local SQLite database for all user data
+- Automatic backup system with configurable intervals
+- Import/export functionality for sharing between devices
+- Cloud sync capability (optional future feature hooks)
+
+## TECHNICAL ARCHITECTURE REQUIREMENTS
+
+### Framework Selection
+Choose the MOST APPROPRIATE framework from:
+1. **Tauri** (Rust + Web frontend) - Recommended for performance
+2. **Electron** (Node.js + Chromium) - For rapid development
+3. **Flutter Desktop** - For native performance
+4. **Qt/C++** - For maximum performance and native feel
+
+Justify your choice based on:
+- Bundle size optimization
+- Memory footprint
+- Cross-platform compatibility
+- Development velocity
+- Long-term maintainability
+
+### Frontend Technology Stack
+- **UI Framework**: React 18+ with TypeScript OR Vue 3 with Composition API
+- **State Management**: Zustand, Pinia, or Redux Toolkit
+- **Styling**: Tailwind CSS + CSS Modules for component isolation
+- **Animation**: Framer Motion or CSS-based animations
+- **Icons**: Lucide React or Heroicons for consistent iconography
+
+### Backend/Data Layer
+- **Database**: SQLite with better-sqlite3 or equivalent
+- **ORM**: Prisma, Drizzle, or raw SQL for performance
+- **File System**: Secure local file operations
+- **Configuration**: JSON/YAML config files
+
+## VISUAL DESIGN REQUIREMENTS
+
+### Theme & Aesthetics
+Create a **premium fantasy RPG aesthetic** incorporating:
+
+#### Color Palette
+- **Primary**: Deep burgundy (#722F37) and gold accents (#D4AF37)
+- **Secondary**: Warm browns (#8B4513, #A0522D) and cream (#F5F5DC)
+- **Accent**: Emerald green (#50C878) for success states
+- **Neutral**: Charcoal (#36454F) and off-white (#FAFAFA)
+- **Dark Mode**: Rich blacks (#1A1A1A) with ember orange (#FF6B35)
+
+#### Typography
+- **Headers**: Cinzel or Trajan Pro (serif, classical)
+- **Body Text**: Source Sans Pro or Inter (clean, readable)
+- **Code/Stats**: JetBrains Mono or Fira Code
+
+#### Visual Elements - Medieval Journal Aesthetic
+- **Primary Textures**: 
+  - Aged vellum and parchment with subtle stains and weathering
+  - Worn leather binding with visible stitching and brass clasps
+  - Hand-carved wooden frames with medieval joinery details
+  - Weathered stone tablets with chiseled inscriptions
+  - Illuminated manuscript borders with gold leaf details
+- **Background Patterns**:
+  - Subtle parchment grain with age spots and foxing
+  - Leather texture with natural creases and wear patterns
+  - Wood grain with visible knots and tool marks
+  - Stone texture with chisel marks and weathering
+  - Fabric weave patterns for tapestry-like sections
+- **Decorative Elements**:
+  - Hand-drawn illuminated capitals for section headers
+  - Celtic knot borders and corner decorations
+  - Medieval heraldic elements and coat of arms
+  - Ornate scrollwork and flourishes
+  - Wax seal stamps for important sections
+- **Iconography Style**:
+  - Hand-drawn medieval manuscript style
+  - Consistent ink pen stroke weights
+  - Subtle shading with cross-hatching techniques
+  - Aged appearance with slight fading
+  - Illuminated manuscript color palette
+
+### Component Design Patterns - Medieval Aesthetic
+- **Parchment Layers**: Multiple paper layers with realistic shadows and curled edges
+- **Leather Bindings**: Tab headers styled as leather book spines with embossed titles
+- **Wax Seals**: Interactive elements styled as wax seals with family crests
+- **Quill & Ink Effects**: Writing animations that simulate quill pen strokes
+- **Candlelight Ambiance**: Subtle warm lighting effects and flickering shadows
+- **Medieval UI Elements**:
+  - Buttons styled as carved stone or wooden toggles
+  - Input fields as ink wells or parchment scraps
+  - Progress bars as illuminated manuscript scroll bars
+  - Dropdown menus as unfurling scrolls or opening books
+
+### Responsive Layout
+- **Minimum Resolution**: 1280x720
+- **Optimal Resolution**: 1920x1080
+- **Scaling**: Support for 125%, 150%, 200% display scaling
+- **Flexible Grid**: CSS Grid and Flexbox for adaptive layouts
+
+## USER EXPERIENCE SPECIFICATIONS
+
+### Navigation Patterns
+- **Tab Bar**: Horizontal tabs at top with close buttons
+- **Sidebar**: Collapsible navigation for app sections
+- **Context Menus**: Right-click functionality throughout
+- **Keyboard Shortcuts**: Full keyboard navigation support
+  - Ctrl+T: New tab
+  - Ctrl+W: Close tab
+  - Ctrl+Tab: Next tab
+  - Ctrl+Shift+Tab: Previous tab
+  - Ctrl+F: Search within tab
+  - Ctrl+Shift+F: Global search
+
+### Accessibility Features
+- **Screen Reader**: ARIA labels and semantic HTML
+- **High Contrast**: Toggle for accessibility
+- **Font Scaling**: User-adjustable text size
+- **Focus Management**: Clear focus indicators
+- **Color Blind Support**: Sufficient contrast ratios
+
+### Performance Targets
+- **Startup Time**: < 3 seconds cold start
+- **Memory Usage**: < 200MB idle, < 500MB active use
+- **Tab Switching**: < 100ms response time
+- **Search Results**: < 500ms for 1000+ entries
+- **File Operations**: < 1 second for save/load operations
+
+## ADVANCED FEATURES TO IMPLEMENT
+
+### Smart Content Features
+- **Auto-completion**: D&D terms, spell names, character names
+- **Dice Roller**: Inline dice notation (1d20+5) with click-to-roll
+- **Template System**: Pre-built templates for sessions, characters, campaigns
+- **Cross-references**: Link between different journal entries
+- **Timeline View**: Chronological organization of campaign events
+
+### Data Visualization
+- **Campaign Calendar**: Visual timeline with event markers
+- **Character Relationship Maps**: Network graphs showing connections
+- **Statistics Dashboard**: Session frequency, character progression
+- **Export Analytics**: Most referenced content, usage patterns
+
+### Integration Capabilities
+- **Image Management**: Drag-and-drop image embedding
+- **File Attachments**: PDF character sheets, maps, handouts
+- **External Links**: Web links with preview capabilities
+- **Printing**: Clean print layouts for physical handouts
+
+## TECHNICAL IMPLEMENTATION DETAILS
+
+### Error Handling & Resilience
+- **Graceful Degradation**: App continues functioning if features fail
+- **Auto-recovery**: Restore unsaved content after crashes
+- **Validation**: Input sanitization and data integrity checks
+- **Logging**: Comprehensive error logging for debugging
+
+### Security Considerations
+- **Data Encryption**: Encrypt sensitive user data at rest
+- **Input Sanitization**: Prevent XSS and injection attacks
+- **File System Security**: Sandboxed file operations
+- **Update Mechanism**: Secure auto-update system
+
+### Testing Strategy
+- **Unit Tests**: 80%+ code coverage
+- **Integration Tests**: Critical user flows
+- **Performance Tests**: Memory leaks, CPU usage
+- **Cross-platform Tests**: Windows, macOS, Linux compatibility
+
+## DEVELOPMENT METHODOLOGY
+
+### Code Quality Standards
+- **TypeScript**: Strict mode enabled, comprehensive type coverage
+- **ESLint/Prettier**: Consistent code formatting and style
+- **Conventional Commits**: Standardized commit messages
+- **Documentation**: JSDoc comments for all public APIs
+- **Code Reviews**: Peer review process simulation
+
+### Project Structure
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Application screens
+├── hooks/              # Custom React hooks
+├── stores/             # State management
+├── database/           # Database schemas and queries
+├── utils/              # Helper functions
+├── types/              # TypeScript definitions
+├── assets/             # Images, fonts, icons
+└── styles/             # Global styles and themes
+```
+
+### Performance Optimization Techniques
+- **Code Splitting**: Lazy load non-critical components
+- **Memoization**: React.memo and useMemo for expensive operations
+- **Virtual Scrolling**: Handle large lists efficiently
+- **Image Optimization**: WebP format, lazy loading, compression
+- **Bundle Analysis**: Webpack Bundle Analyzer insights
+
+## DEPLOYMENT & DISTRIBUTION
+
+### Build Configuration
+- **Production Build**: Minified, optimized bundle
+- **Development Build**: Hot reload, source maps
+- **Staging Build**: Production-like with debugging enabled
+
+### Platform-Specific Considerations
+- **Windows**: MSI installer, Start Menu integration
+- **macOS**: DMG package, Gatekeeper compatibility
+- **Linux**: AppImage, .deb, .rpm packages
+
+### Auto-Update System
+- **Semantic Versioning**: Clear version numbering
+- **Delta Updates**: Minimal download sizes
+- **Rollback Capability**: Revert to previous version
+- **Update Notifications**: User-friendly update prompts
+
+## OUTPUT REQUIREMENTS
+
+### Deliverables
+1. **Complete Source Code**: Production-ready application
+2. **Build Scripts**: Cross-platform compilation
+3. **Documentation**: Setup, usage, and development guides
+4. **Asset Attribution**: Properly licensed visual assets
+5. **Testing Suite**: Comprehensive test coverage
+
+### Code Organization
+- **Modular Architecture**: Clean separation of concerns
+- **Reusable Components**: DRY principle throughout
+- **Configuration Files**: Environment-based settings
+- **Asset Pipeline**: Optimized resource loading
+
+## QUALITY ASSURANCE CHECKLIST
+
+### Functionality Testing
+- [ ] All journal operations work correctly
+- [ ] Tab management functions properly
+- [ ] Data persistence across sessions
+- [ ] Search functionality operates efficiently
+- [ ] Export/import features function correctly
+
+### Visual Quality Verification
+- [ ] Consistent theming throughout application
+- [ ] High-quality textures and visual elements
+- [ ] Smooth animations and transitions
+- [ ] Responsive layout across different screen sizes
+- [ ] Accessibility features implemented
+
+### Performance Validation
+- [ ] Startup time meets requirements
+- [ ] Memory usage within acceptable limits
+- [ ] No memory leaks during extended use
+- [ ] Fast response times for all operations
+- [ ] Efficient database queries
+
+## QUALITY OF LIFE IMPROVEMENTS (PRIORITY FEATURES)
+
+### 1. Smart Item Type Icons & Auto-Detection
+- **Dynamic Tab Icons**: Automatically detect content type and assign appropriate icons
+  - 📝 Session notes (quill icon)
+  - ⚔️ Combat encounters (crossed swords)
+  - 🏰 Location descriptions (castle icon)
+  - 👥 NPCs and characters (portrait icon)
+  - 📚 Lore and worldbuilding (book icon)
+  - 🗺️ Maps and geography (compass icon)
+  - 💰 Treasure and items (chest icon)
+  - 🎲 Rules and mechanics (dice icon)
+- **Custom Icon Assignment**: Right-click to manually set tab icons from comprehensive icon library
+
+### 2. Quick Action Toolbar
+- **Floating Toolbar**: Context-sensitive quick actions
+  - Insert dice notation template (1d20+[modifier])
+  - Add timestamp for session notes
+  - Create character reference link
+  - Insert initiative order template
+  - Add weather/environment quick notes
+
+### 3. Smart Auto-Complete & Suggestions
+- **D&D Terminology Database**: Comprehensive auto-complete for:
+  - Spell names with level and school indicators
+  - Monster names with CR ratings
+  - Magic item names with rarity
+  - Condition names with brief descriptions
+  - Location types (tavern, dungeon, city, etc.)
+- **Custom Dictionary**: Learn user's campaign-specific terms and names
+
+### 4. Enhanced Search with Filters
+- **Advanced Search Bar**: 
+  - Filter by content type, date range, tags
+  - Search within specific tabs or globally
+  - Regex support for power users
+  - Recent searches dropdown
+  - Search result previews with highlighting
+
+### 5. Drag & Drop Organization
+- **Universal Drag Support**:
+  - Reorder tabs by dragging
+  - Drag text between tabs
+  - Drag images from file explorer directly into notes
+  - Create content blocks that can be moved between sessions
+  - Drag to create cross-references between entries
+
+### 6. Session Templates & Quick Start
+- **Template Library**:
+  - Session planning template (objectives, NPCs, encounters)
+  - Character creation worksheet
+  - Town/city description template
+  - Dungeon room template with auto-numbering
+  - Combat encounter builder
+- **One-Click Session Start**: Auto-create today's session with template
+
+### 7. Timeline & Session History View
+- **Visual Timeline**: Chronological view of all sessions with:
+  - Session duration tracking
+  - Major events highlighted
+  - Character level progression markers
+  - Story arc visualization
+- **Session Statistics**: Track campaign progress, character growth, favorite NPCs
+
+### 8. Quick Reference Panels
+- **Collapsible Side Panels**:
+  - Condition reference with descriptions
+  - Action economy quick guide (Action, Bonus Action, Reaction, Move)
+  - Spell slot tracker
+  - Status effect tracker
+  - Initiative order display
+
+### 9. Multi-Window Support
+- **Detachable Tabs**: Pop tabs into separate windows for multi-monitor setups
+- **Always-on-Top Mode**: Keep reference windows visible while using other apps
+- **Picture-in-Picture**: Minimize panels to small overlay windows
+
+### 10. Smart Backup & Recovery
+- **Automatic Recovery**: Restore unsaved work after crashes
+- **Version History**: Access previous versions of any tab
+- **Cloud Backup Integration**: Optional Google Drive/Dropbox sync
+- **Export Scheduling**: Auto-export backups daily/weekly
+- **Corruption Recovery**: Automatic database repair tools
+
+## RACE & CLASS TRACKING SYSTEM (CORE FEATURE)
+
+### Character Creation Interface
+- **Race Selection Dropdown**: All SRD 5e races with descriptions
+  - Human, Dwarf, Elf, Halfling, Dragonborn, Gnome, Half-Elf, Half-Orc, Tiefling
+  - Display racial traits, ability score improvements, and special features
+  - Visual race icons and brief lore descriptions
+
+- **Class Selection Dropdown**: All SRD 5e classes with level progression
+  - Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
+  - Show primary ability, hit die, and key features preview
+  - Class-specific icons and color themes
+
+### Ability Tracking Dashboard
+
+##### Interactive Feature Icons & Tooltips
+- **Icon Design Philosophy**: Medieval illuminated manuscript style with consistent artistic approach
+- **Hover Tooltip System**: Parchment-style tooltip boxes with the following features:
+  - Fade-in animation (300ms) with subtle parchment unfurling effect
+  - Rich text formatting with medieval typography
+  - Complete rule descriptions from SRD 5e
+  - Usage requirements and limitations
+  - Damage dice, saving throws, and mechanical details
+  - Cross-references to related abilities
+
+#### Class Feature Icons (Hand-drawn Medieval Style)
+- **Barbarian**: 
+  - Rage: Crossed battle axes with red fury aura
+  - Unarmored Defense: Shield with tribal markings
+  - Reckless Attack: Berserker's wild swing motion
+  - Danger Sense: Alert wolf head with pricked ears
+  - Fast Movement: Running boots with speed lines
+  - Brutal Critical: Massive sword with blood drops
+
+- **Bard**:
+  - Bardic Inspiration: Lute with musical notes floating
+  - Jack of All Trades: Swiss army knife with multiple tools
+  - Song of Rest: Campfire with musical notes
+  - Expertise: Magnifying glass over skill symbols
+  - Countercharm: Shield deflecting charm magic
+  - Magical Secrets: Open spellbook with glowing runes
+
+- **Cleric**:
+  - Channel Divinity: Holy symbol radiating divine light
+  - Turn Undead: Fleeing skeletal figures
+  - Destroy Undead: Crumbling skull with holy light
+  - Divine Strike: Blessed weapon with golden glow
+  - Divine Intervention: Hand reaching from heavens
+  - Spellcasting: Prayer book with divine symbols
+
+- **Druid**:
+  - Wild Shape: Human silhouette transforming to beast
+  - Druidcraft: Growing plant with nature symbols
+  - Wild Companion: Druid with animal companion
+  - Timeless Body: Tree with eternal leaves
+  - Beast Spells: Wolf casting magic
+  - Archdruid: Elder tree with mystical aura
+
+- **Fighter**:
+  - Fighting Style: Crossed weapons showing technique
+  - Action Surge: Clock with accelerated hands
+  - Second Wind: Healing potion with warrior
+  - Extra Attack: Multiple sword strikes
+  - Indomitable: Stalwart shield against magic
+  - Champion Critical: Perfect sword strike
+
+- **Monk**:
+  - Martial Arts: Fists in fighting stance
+  - Ki: Swirling energy around meditation pose
+  - Unarmored Defense: Flowing robes deflecting attack
+  - Deflect Missiles: Hand catching arrow
+  - Slow Fall: Figure floating downward
+  - Stunning Strike: Pressure point diagram
+
+- **Paladin**:
+  - Divine Sense: Eye with holy radiance
+  - Lay on Hands: Healing hands with divine light
+  - Divine Smite: Sword wreathed in holy fire
+  - Aura of Protection: Protective circle around allies
+  - Cleansing Touch: Hand removing curse
+  - Sacred Oath: Sworn blade with holy vows
+
+- **Ranger**:
+  - Favored Enemy: Crosshairs over creature type
+  - Natural Explorer: Compass with terrain symbols
+  - Hunter's Mark: Marked target with tracking runes
+  - Primeval Awareness: Forest awareness network
+  - Land's Stride: Footprints through difficult terrain
+  - Hide in Plain Sight: Camouflaged figure
+
+- **Rogue**:
+  - Sneak Attack: Dagger striking from shadows
+  - Thieves' Cant: Secret coded message
+  - Cunning Action: Figure in dynamic dodge
+  - Uncanny Dodge: Blade sliding off armor
+  - Evasion: Figure dodging explosion
+  - Reliable Talent: Perfect lockpick attempt
+
+- **Sorcerer**:
+  - Sorcerous Origin: Bloodline symbol with power
+  - Font of Magic: Wellspring of raw energy
+  - Metamagic: Spell being modified mid-cast
+  - Sorcery Points: Glowing energy orbs
+  - Flexible Casting: Spell slots transforming
+  - Spell Twister: Magic being reshaped
+
+- **Warlock**:
+  - Otherworldly Patron: Dark contract with seal
+  - Pact Magic: Short rest spell recovery
+  - Eldritch Invocations: Forbidden knowledge tome
+  - Pact Boon: Patron's gift manifestation
+  - Mystic Arcanum: High-level spell scroll
+  - Eldritch Master: Patron communion ritual
+
+- **Wizard**:
+  - Spellcasting: Wizard's spellbook open
+  - Ritual Casting: Ritual circle with components
+  - Arcane Recovery: Meditation recovering spells
+  - School Specialization: School-specific symbols
+  - Spell Mastery: Perfectly memorized spell
+  - Signature Spells: Personal magical trademark
+
+#### Racial Feature Icons (Medieval Heraldic Style)
+- **Human**: Crown representing versatility and leadership
+- **Dwarf**: Hammer and anvil for craftsmanship and resilience
+- **Elf**: Elegant leaf with mystical glow for fey heritage
+- **Halfling**: Lucky horseshoe for fortune and nimbleness
+- **Dragonborn**: Dragon head breathing elemental energy
+- **Gnome**: Clockwork gear for tinker heritage
+- **Half-Elf**: Split symbol showing dual heritage
+- **Half-Orc**: Crossed cultures symbol with strength
+- **Tiefling**: Curved horn with infernal runes
+
+## BESTIARY TAB - MONSTER COMPENDIUM
+
+### Core Bestiary Features
+- **"Pokedex" Tracking System**: 
+  - Encountered/Unencountered status for each monster
+  - First encounter date and location logging
+  - Kill count and defeat methods tracking
+  - Personal notes and tactical observations
+  - Favorite monsters bookmarking system
+
+### Monster Display System
+- **Complete SRD 5e Integration**: Full Monster Manual entries including:
+  - **Stat Block**: AC, HP, Speed, STR/DEX/CON/INT/WIS/CHA
+  - **Skills & Saves**: Proficiencies and bonuses
+  - **Damage Resistances/Immunities**: Complete listing
+  - **Senses**: Darkvision, tremorsense, truesight ranges
+  - **Languages**: Communication capabilities
+  - **Challenge Rating**: XP value and proficiency bonus
+  - **Special Abilities**: Legendary actions, reactions, lair actions
+  - **Actions**: Complete attack descriptions with damage
+  - **Legendary Actions**: End-of-turn capabilities
+  - **Lair Actions**: Environmental combat abilities
+
+### Medieval Bestiary Aesthetic
+- **Illuminated Manuscript Style**:
+  - Hand-drawn monster illustrations in medieval art style
+  - Ornate initial capitals for monster names
+  - Decorative borders with relevant thematic elements
+  - Aged parchment background with subtle stains
+  - Calligraphy-style fonts for headers and important text
+
+### Search & Organization System
+- **Advanced Search Capabilities**:
+  - Search by name, type, CR, environment
+  - Filter by encountered/unencountered status
+  - Sort by alphabetical, CR, type, or custom categories
+  - Tag system for custom organization
+  - Recent searches and bookmarks
+
+- **Category Organization**:
+  - **By Type**: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Humanoid, Monstrosity, Ooze, Plant, Undead
+  - **By Challenge Rating**: CR 0 to CR 30+ progression
+  - **By Environment**: Arctic, Coast, Desert, Forest, Grassland, Hill, Mountain, Swamp, Underdark, Underwater, Urban
+  - **By Size**: Tiny, Small, Medium, Large, Huge, Gargantuan
+  - **Custom Categories**: Player-created organizational system
+
+### Interactive Monster Entries
+- **Medieval Monster Tome Layout**:
+  - Large monster illustration at top (medieval art style)
+  - Ornate border with creature type iconography
+  - Stat block in illuminated manuscript format
+  - Abilities written in calligraphy with decorative elements
+  - Personal encounter log section with quill-written entries
+
+### Encounter Tracking Features
+- **Battle Journal Integration**:
+  - Mark as encountered with automatic date/time stamp
+  - Add encounter location and circumstances
+  - Rate difficulty and add tactical notes
+  - Upload battle screenshots or drawings
+  - Link to session notes where encounter occurred
+
+- **Statistics & Analytics**:
+  - Most encountered monster types
+  - Deadliest opponents faced
+  - Encounter success rate by CR
+  - Timeline of monster discoveries
+  - Campaign bestiary completion percentage
+
+### Monster Relationships & Lore
+- **Connected Creatures**:
+  - Show related monsters (dragon wyrmlings to ancient dragons)
+  - Hierarchy displays (goblin to hobgoblin to bugbear)
+  - Elemental variants and regional differences
+  - Cross-references to similar abilities across monsters
+
+- **Extended Lore Sections**:
+  - Habitat and behavior descriptions
+  - Cultural significance and mythology
+  - Tactics and combat preferences
+  - Treasure and reward expectations
+  - Plot hooks and adventure integration
+
+### Visual Design Elements
+- **Medieval Bestiary Aesthetics**:
+  - Monster portraits in illuminated manuscript style
+  - Decorative capital letters for each entry
+  - Margin notes and annotations in period-appropriate handwriting
+  - Wax seals marking important or dangerous creatures
+  - Ribbon bookmarks for quick navigation
+  - Aged paper texture with realistic wear and staining
+
+- **Interactive Elements**:
+  - Hover effects reveal additional creature details
+  - Click monster abilities for expanded rule descriptions
+  - Drag monsters to encounter builder or initiative tracker
+  - Right-click for quick actions (mark encountered, add to favorites)
+  - Monster comparison tool for similar creatures
+
+#### Class Feature Tracking
+- **Level-Based Feature Unlock**:
+  - Automatic feature availability based on character level
+  - Progressive feature descriptions as character advances
+  - Subclass feature integration when applicable
+
+- **Resource Management**:
+  - **Short Rest Resources**: 
+    - Warlock Spell Slots
+    - Fighter Action Surge/Second Wind
+    - Monk Ki Points
+    - Bard Song of Rest
+  - **Long Rest Resources**:
+    - Spell Slots (all full casters)
+    - Barbarian Rage uses
+    - Cleric Channel Divinity
+    - Paladin Lay on Hands pool
+
+#### Rest Management System
+- **Short Rest Button**:
+  - Restores Hit Dice (up to half character level)
+  - Resets Short Rest abilities
+  - Tracks rest duration (1 hour default)
+  - Option to spend Hit Dice for healing
+
+- **Long Rest Button**:
+  - Restores all Hit Points
+  - Restores all spell slots
+  - Resets Long Rest abilities
+  - Restores all Hit Dice
+  - Clears exhaustion levels (one level per long rest)
+
+### Advanced Tracking Features
+
+#### Spell System Integration
+- **Spellcaster Support**:
+  - Spell slot tracking by level (1st-9th)
+  - Known spells vs prepared spells distinction
+  - Cantrip tracking (unlimited use)
+  - Ritual spell identification
+  - Concentration spell monitoring
+
+#### Combat Resource Tracking
+- **Action Economy Display**:
+  - Action availability (used/available)
+  - Bonus Action tracking
+  - Reaction usage
+  - Movement remaining
+
+- **Condition Tracking**:
+  - Active conditions with duration timers
+  - Advantage/disadvantage status
+  - Temporary hit points
+  - Death saving throw tracking
+
+### User Interface Design
+
+#### Character Sheet Tab
+- **Integrated Character Management**:
+  - Dedicated character sheet tab type
+  - Race/class selection at the top
+  - Tabbed interface within character sheet:
+    - Basic Info (stats, HP, AC)
+    - Features & Traits (race/class abilities)
+    - Spells (if applicable)
+    - Equipment & Inventory
+    - Notes & Backstory
+
+#### Quick Action Bar
+- **Always Visible Controls**:
+  - Short Rest / Long Rest buttons
+  - Current HP / Max HP display
+  - Active spell slots remaining
+  - Quick dice roller
+  - Initiative modifier display
+
+#### Visual Indicators
+- **Status Visualization**:
+  - Color-coded resource bars (green=full, yellow=partial, red=low)
+  - Cooldown indicators for limited abilities
+  - Spell slot circles that fill/empty
+  - Exhaustion level indicator
+
+### Data Integration & SRD Compliance
+
+#### SRD 5e Database
+- **Complete Race Data**:
+  - All ability score improvements
+  - Racial traits with full descriptions
+  - Size, speed, and special movement
+  - Proficiencies and languages
+
+- **Complete Class Data**:
+  - Level progression tables
+  - Feature descriptions and mechanics
+  - Spell progression for casters
+  - Subclass features (basic subclasses only)
+
+#### Homebrew Support
+- **Custom Race/Class Creator**:
+  - Template-based custom race builder
+  - Custom class feature integration
+  - Import/export custom content
+  - Homebrew content validation
+
+### Persistence & Data Management
+
+#### Character Data Storage
+- **SQLite Database Schema**:
+  - Characters table with race/class selections
+  - Features table with usage tracking
+  - Resources table with current/max values
+  - Session log for rest tracking
+
+#### Import/Export System
+- **Character Portability**:
+  - Export character as JSON/XML
+  - Import from D&D Beyond (basic stats)
+  - Share characters between campaigns
+  - Backup character data separately
+
+## BONUS FEATURES (IMPLEMENT IF POSSIBLE)
+
+### Advanced Journal Features
+- **Collaborative Editing**: Real-time collaboration (future-ready)
+- **Voice Notes**: Audio recording and transcription
+- **Handwriting Recognition**: Stylus input support
+- **AI Assistance**: Content suggestions and organization
+- **Plugin System**: Extensibility for custom features
+
+### D&D Specific Enhancements
+- **Initiative Tracker**: Combat management tools
+- **Monster Manual**: Creature reference with stats
+- **Rules Reference**: Quick rule lookups
+- **Encounter Builder**: CR-balanced encounter creation
+- **Campaign Calendar**: Track in-game time and events
+
+## SUCCESS METRICS
+
+### User Experience Metrics
+- **First-time User Success**: 90% complete onboarding
+- **Feature Adoption**: 70% use core journal features
+- **Retention Rate**: 80% weekly active users
+- **Performance Satisfaction**: <3 second average response time
+
+### Technical Metrics
+- **Crash Rate**: <0.1% of sessions
+- **Memory Efficiency**: <500MB peak usage
+- **Battery Impact**: Minimal drain on laptops
+- **Cross-platform Consistency**: 95% feature parity
+
+## FINAL INSTRUCTIONS
+
+1. **Research Best Practices**: Investigate current D&D app UX patterns
+2. **Optimize Asset Pipeline**: Ensure fast loading and small file sizes
+3. **Prioritize User Feedback**: Design for actual D&D player workflows
+4. **Future-proof Architecture**: Build for scalability and extensibility
+5. **Document Everything**: Comprehensive code and user documentation
+
+Create an application that D&D enthusiasts would gladly pay for - professional quality, intuitive interface, and robust functionality that enhances their gaming experience.
+
+Remember: This is not just a notepad with tabs. This is a premium companion tool that should feel like an essential part of every D&D campaign.
